@@ -14,5 +14,5 @@ Load the module in via a CDN or a dojo require, if you use a dojo require, be su
 
 <h3>Give it a try!</h3>
 
-Try your rest URL <a href="https://nick-romano.github.io/arcgis-rest-table-plugin/">Here</a>
+Try your rest URL <a href="https://nick-romano.github.io/arcgis-rest-table-plugin/">here</a>
 
