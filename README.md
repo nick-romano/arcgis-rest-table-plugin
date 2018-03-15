@@ -4,11 +4,25 @@
 
 This plugin builds a stylized table from an ArcGIS REST Query, to be used in mapping widgets and applications.
 
-To use the plugin you need the following dependencies in your website:
--ArcGIS for JavaScript API 3.x
+To use the plugin you need the following dependencies in your website:<br>
+-ArcGIS for JavaScript API 3.x<br>
 -jQuery
 
 Load the module in via a CDN or a dojo require, if you use a dojo require, be sure to use the esri jqueryloader (<a href="https://community.esri.com/thread/184576-how-to-load-jquery-plugins-on-web-appbuilder">more here</a>)
+
+
+<h3>Parameters</h3>
+To activate the plugin, select the DOM element where you want to insert it with jQuery and run the command
+<code>.sortableTable({*params*});</code>
+
+You'll also have a few parameters to select:
+
+  {<br>
+    url: *your REST url*, <br>
+    nameField: *field in resource you want for the name of each feature in the list*, <br>
+    sortField: *field in resource you want to be able to sort by*, <br>
+    back: *this option is if you want a back button, the button will hide the list and empty it's contents (true, false)*<br>
+  }  <br>
 
 
 
