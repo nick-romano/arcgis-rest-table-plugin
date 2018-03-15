@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.22/esri/css/esri.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://js.arcgis.com/3.18/"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="jquerymethod.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron"><h4>ArcGIS Sortable Table Generator</h4></div>
+        <form role="form">
+            <div class="form-group">
+                <label for="url">ArcGIS REST URL:</label>
+                <input type="text" class="form-control" id="url" name="url" placeholder = "e.g. https://maps.umd.edu/arcgis/rest/services/Layers/DiningService/MapServer/1">
+                <p id="unverified" style="display: none">Please enter a valid ArcGIS REST URL</p>
+            </div>
+            <div class="form-group">
+                <label for="name-field">Name Field:</label>
+                <select type="name-field" class="form-control" id="name-field" name="name-field" disabled>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sort-field">Sort Field:</label>
+                <select type="sort-field" class="form-control" id="sort-field" name="sort-field" disabled>
+                    <option value="no-sort">No sort field</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default" id="botton" disabled>Build Table</button>
+        </form>
+        <div id="diningTable"></div>
+    </div>
+    <script>
+    server = "https://maps.umd.edu"
+    //$('#diningTable').sortableTable({ url: "https://maps.umd.edu/arcgis/rest/services/Layers/DiningService/MapServer/1", nameField: "Name", sortField: "BUILDINGNAME", back: true });
+
+    $('#url').on('blur', function(e){
+        if(e.target.value.indexOf("/rest/services") > -1){
+            $.getJSON(e.target.value + '/layers?f=pjson', 
+                function(r){
+                    fillFields(r);
+                    $('#unverified').hide();
+                })
+                .fail(function(r){
+                    console.log('error');
+                    $('#unverified').show();
+                })
+        }else{
+            $('#unverified').show();
+        }
+    })
+
+    function fillFields(r){
+        for(var i = 0; i < r.fields.length; i++){
+            $('#name-field').append('<option value = '+r.fields[i].name+'>'+r.fields[i].name+'</option>');
+            $('#sort-field').append('<option value = '+r.fields[i].name+'>'+r.fields[i].name+'</option>');
+        }
+        $('#name-field').prop('disabled', false);
+        $('#sort-field').prop('disabled', false);
+        $('#botton').prop('disabled', false);
+    }
+
+    $('form').on('submit', function(e){
+        e.preventDefault();
+        if( $('#sort-field').val() != "no-sort"){
+            $('#diningTable').sortableTable({url: $('form #url').val(), nameField: $('#name-field').val(), sortField: $('#sort-field').val()});
+        }else{
+            $('#diningTable').sortableTable({url: $('form #url').val(), nameField: $('#name-field').val(), sortField: null});
+        };
+    })
+
+
+    </script>
+</body>
+
+</html>
