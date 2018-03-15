@@ -1,37 +1,18 @@
-## Welcome to GitHub Pages
+<h2>arcgis-rest-table-plugin</h2>
 
-You can use the [editor on GitHub](https://github.com/nick-romano/arcgis-rest-table-plugin/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+This plugin builds a stylized table from an ArcGIS REST Query, to be used in mapping widgets and applications.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+To use the plugin you need the following dependencies in your website:
+-ArcGIS for JavaScript API 3.x
+-jQuery
 
-```markdown
-Syntax highlighted code block
+Load the module in via a CDN or a dojo require, if you use a dojo require, be sure to use the esri jqueryloader (<a href="https://community.esri.com/thread/184576-how-to-load-jquery-plugins-on-web-appbuilder">more here</a>)
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+<h3>Give it a try!</h3>
 
-**Bold** and _Italic_ and `Code` text
+Try your rest URL <a href="https://nick-romano.github.io/arcgis-rest-table-plugin/">Here</a>
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nick-romano/arcgis-rest-table-plugin/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
