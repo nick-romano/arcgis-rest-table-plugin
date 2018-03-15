@@ -1,6 +1,6 @@
 <h2>arcgis-rest-table-plugin</h2>
 
-
+<img src="https://github.com/nick-romano/arcgis-rest-table-plugin/blob/master/imgs_forpreview/lists.PNG" height="400px"/>
 
 This plugin builds a stylized table from an ArcGIS REST Query, to be used in mapping widgets and applications.
 
