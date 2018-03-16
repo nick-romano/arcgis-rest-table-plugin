@@ -173,7 +173,7 @@ $.fn.extend({
                             var name = list[i].Name.toString();
                             var type = list[i].Type;
                             var geom = JSON.stringify(list[i].Geometry);
-                            var string = 'Locate("' + name + '","Parking");hamburger();';
+                            var string = '';
                             if (type) {
                                 $('#' + assignID + ' tr:last').after('<tr' + ' id="' + name.substring(0, 3) + assignID + '" class=" even"><td><span class="list-header">' + name + '</span><br><text class="cat">' + type + '</text><i class="material-icons action">search</i></td></tr>');
                             } else {
@@ -193,13 +193,13 @@ $.fn.extend({
                                 console.log(geom)
                                 if (geom.type === "polygon") {
                                     map.setExtent(geom.getExtent());
-                                    hamburger();
+                                    
                                     //var mapPoint = geom.getExtent().getCenter();
                                     //var screenPoint = esri.geometry.toScreenPoint(map.extent, map.width, map.height, mapPoint);
                                     //setTimeout(function(){map.emit('click', { mapPoint, screenPoint, bubbles: false, cancelable: true })},100);
                                 } else {
-                                    map.centerAndZoom(geom, 8);
-                                    hamburger();
+                                    map.centerAndZoom(geom, 18);
+                                    
                                     //var mapPoint = geom;
                                     //var screenPoint = esri.geometry.toScreenPoint(map.extent, map.width, map.height, mapPoint);
                                     //setTimeout(function(){map.emit('click', { mapPoint, screenPoint, bubbles: false, cancelable: true })},100);
@@ -280,7 +280,6 @@ $.fn.extend({
                 $('div.filterMenu.action-menu li').css(style["action-menu-li"]);
 
                 $('.action-menu .material-icons').css(style["action-menu-material-icons"]);
-                $('.action-menu .')
 
                 return s
 
