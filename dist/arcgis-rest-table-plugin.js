@@ -119,10 +119,8 @@ $.fn.extend({
             addTable: function addTable(a, url, nameField, sortField, back) {
                 $(a).show();
                 initState = $(a).html();
-                //console.log(initState);
                 if ($(a).html().indexOf("<table") === -1) {
                     var populateArray = function populateArray(results) {
-                        console.log(results);
                         var ResultFeatures = results.features;
                         for (var p = 0; p < ResultFeatures.length; p++) {
                             resultDivArray.push({ Name: ResultFeatures[p].attributes[nameField], Type: ResultFeatures[p].attributes[sortField], Geometry: ResultFeatures[p].geometry });
@@ -153,7 +151,6 @@ $.fn.extend({
                         $('#' + assignID + ' td').each(function (a, b) {
                             var geom = list[a].Geometry;
                             $(b).on('click', function () {
-                                console.log(geom);
                                 if (geom.type === "polygon") {
                                     map.setExtent(geom.getExtent());
 
@@ -253,7 +250,6 @@ $.fn.extend({
 
             listCheck: function listCheck(e) {
                 e = e.children[0].children[0];
-                console.log(e);
                 if (e.checked == true) {
                     e.parentElement.children["RadioBtn"].innerHTML = "radio_button_checked";
                     e.checked = true;
@@ -266,7 +262,6 @@ $.fn.extend({
 
             sortTable: function sortTable(s, order) {
                 s = $(s);
-                console.log(s);
                 var asc = order === 'asc',
                     tbody = s.find('tbody');
 
@@ -307,7 +302,6 @@ $.fn.extend({
 
             filterMenu: function filterMenu(event, a) {
                 var divID = a;
-                console.log(event);
 
                 //check to see if div is a secondary menu within the tab, in which case the divs position must be absolute and top = 106px, and the filterMenu adjusted accordingly
                 if (!isNaN($(divID).parent().css('top')[0])) {
@@ -319,7 +313,7 @@ $.fn.extend({
                 if (!$(divID + '> div.action-menu.filterMenu.second > ul > li')[0]) {
                     var filterfunction = function filterfunction(array) {
 
-                        menu = $(divID + " .filterMenu ul");
+                        var menu = $(divID + " .filterMenu ul");
                         var a = [];
                         for (var i = 0; i < array.length; i++) {
                             if (a.indexOf(array[i]) == -1) {
@@ -357,7 +351,6 @@ $.fn.extend({
                         }
                     }
 
-                    console.log(divID + ' ' + maxlen);
                     $(divID + ' .filterMenu').css('width', maxlen * 7 + 35);
 
                     filterfunction(unique);
@@ -384,8 +377,6 @@ $.fn.extend({
             },
 
             sortMenu: function sortMenu(event, a) {
-                console.log(a);
-                console.log(event);
                 $(a + " .sortMenu").show();
                 var divID = a;
                 if (!isNaN($(divID).parent().css('top')[0])) {

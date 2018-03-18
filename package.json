@@ -7,11 +7,13 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.3.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "babel src/arcgis-rest-table-plugin.js -o dist/arcgis-rest-table-plugin.js"
+    "build": "babel src/arcgis-rest-table-plugin.js -o dist/arcgis-rest-table-plugin.js",
+    "build-min" : "babel src/arcgis-rest-table-plugin.js -o dist/arcgis-rest-table-plugin.min.js --presets=minify"
   },
   "repository": {
     "type": "git",
