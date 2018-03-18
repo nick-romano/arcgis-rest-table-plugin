@@ -9,6 +9,8 @@ $.fn.extend({
 
         var resultDivArray = [];
         var initState;
+        var assignID;
+
         var style = {
 
             "sort-bar": {
@@ -194,6 +196,7 @@ $.fn.extend({
             },
 
             addSortBar: function addSortBar(a, sortField, back) {
+                console.log(a);
                 var s = $(a);
 
                 $('#' + s[0].id + ' tbody tr').first().before('<div class="sort-bar" >' + '<label style="float: left;display:none" id="backArrow">' + '<i class="material-icons" style="font-size:18px;cursor:pointer;">arrow_back</i><text> back</text>' + '</label>' + '<label id="sortDiv" style="display:none">' + '<text>Filter</text>' + '<i class="material-icons" style = "padding-right: 5px; font-size:18px;cursor:pointer; vertical-align: middle">sort</i>' + '</label>' + '<label  style="padding-left:10px">' + '<text>Sort</text>' + '<i class="material-icons" style="font-size:18px;cursor:pointer; vertical-align: middle">sort_by_alpha</i>' + '</label>' + '</div>');

@@ -16,6 +16,7 @@ $.fn.extend({
 
         var resultDivArray = [];
         var initState;
+
         var style = {
 
             "sort-bar": {
@@ -126,10 +127,10 @@ $.fn.extend({
         var methods = {
 
             addTable: function(a, url, nameField, sortField, back) {
+                var assignID = "table" + (Math.random() * 100).toFixed(0);
                 $(a).show();
                 initState = $(a).html();
                 if ($(a).html().indexOf("<table") === -1) {
-                    var assignID = "table" + (Math.random() * 100).toFixed(0);
                     $(a).append(
                         '<table class="yellow-list" id="' + assignID + '">' +
                         '<tbody id="fbody">' +
@@ -211,6 +212,7 @@ $.fn.extend({
             },
 
             addSortBar: function(a, sortField, back) {
+                console.log(a);
                 var s = $(a);
 
                 $('#' + s[0].id + ' tbody tr').first().before(
