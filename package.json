@@ -1,0 +1,26 @@
+{
+  "name": "arcgis-rest-table-plugin",
+  "version": "1.0.0",
+  "description": "<h2>arcgis-rest-table-plugin</h2>",
+  "main": "arcgis-rest-table-plugin.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "babel src/arcgis-rest-table-plugin.js -o dist/arcgis-rest-table-plugin.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nick-romano/arcgis-rest-table-plugin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nick-romano/arcgis-rest-table-plugin/issues"
+  },
+  "homepage": "https://github.com/nick-romano/arcgis-rest-table-plugin#readme"
+}
