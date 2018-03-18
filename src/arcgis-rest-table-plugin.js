@@ -5,12 +5,19 @@ $.fn.extend({
         styleEl.innerHTML = `
         @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro"); 
         @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+        
         .action-menu ul li .material-icons {
             float: right;
             position: relative;
             bottom: -2px;
             font-size: 16px;
+        };
+
+        .action-menu label {
+            display: block;
+            width: 100%;
         }
+        
         `;
         document.head.appendChild(styleEl);
 
@@ -212,7 +219,6 @@ $.fn.extend({
             },
 
             addSortBar: function(a, sortField, back) {
-                console.log(a);
                 var s = $(a);
 
                 $('#' + s[0].id + ' tbody tr').first().before(
@@ -362,7 +368,7 @@ $.fn.extend({
                                 r.push(this[i][field]);
                             }
                         }
-                        r.splice(r.indexOf(null), 1)
+                        //r.splice(r.indexOf(null), 1)
                         r.sort();
                         //r.push("Other");
                         return r;
