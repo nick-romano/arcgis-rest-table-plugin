@@ -13,7 +13,7 @@ $.fn.extend({
             font-size: 16px;
         };
 
-        .action-menu label {
+        .action-menu ul label {
             display: block;
             width: 100%;
         }
@@ -379,8 +379,10 @@ $.fn.extend({
 
                     var maxlen = 0;
                     for (var i = 0; i < unique.length; i++) {
-                        if (unique[i].length > maxlen) {
-                            maxlen = unique[i].length;
+                        if(unique[i]){
+                            if (unique[i].length > maxlen) {
+                                maxlen = unique[i].length;
+                            }
                         }
                     }
 
@@ -407,18 +409,12 @@ $.fn.extend({
                     $('div.filterMenu.action-menu li').css(style["action-menu-li"]);
                     $('.action-menu .material-icons').css(style["action-menu-material-icons"]);
                     $('.action-menu input').css(style["action-menu-input"]);
+                    $('.action-menu ul label').css('width', '100%');
                 }
 
                 //applying styles
                 $('div.filterMenu.action-menu li').css(style["action-menu-li"]);
                 setTimeout(function() { $(document).on('click', methods.filterOff); }, 200);
-                // var maxrow = $('#' + s[0].id + ' > div.action-menu.filterMenu.second > ul > li').length;
-                // if (maxrow > 7) {
-                //     $('.filterMenu').css({ "height": "256px", "overflow-y": "scroll", "overflow-x": "hidden" });
-                //     //populateBuildingDiv(parkingDivArray);
-                // } else {
-                //     $('.filterMenu').css('height', maxrow * 36);
-                // }8
             },
 
             sortMenu: function(event, a) {
