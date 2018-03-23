@@ -10,6 +10,10 @@ $.fn.extend({
             bottom: -2px;
             font-size: 16px;
         }
+
+        table.yellowlist {
+            border-collapse: separate !important;
+        }
         `;
         document.head.appendChild(styleEl);
 
