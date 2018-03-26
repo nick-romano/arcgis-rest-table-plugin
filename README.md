@@ -17,12 +17,14 @@ To activate the plugin, select the DOM element where you want to insert it with 
 
 You'll also have a few parameters to select:
 
-  {<br>
-    url: *your REST url*, <br>
-    nameField: *field in resource you want for the name of each feature in the list*, <br>
-    sortField: *field in resource you want to be able to sort by*, <br>
-    back: *this option is if you want a back button, the button will hide the list and empty it's contents (true, false)*<br>
-  }  <br>
+```JavaScript
+  {
+    url: *your REST url*,
+    nameField: *field in resource you want for the name of each feature in the list*, 
+    sortField: *field in resource you want to be able to sort by*, 
+    back: *this option is if you want a back button, the button will hide the list and empty it's contents (true, false)*
+  }  
+```
 
 
 
