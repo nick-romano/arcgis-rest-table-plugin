@@ -19,10 +19,10 @@ You'll also have a few parameters to select:
 
 ```JavaScript
   {
-    url: *your REST url*,
-    nameField: *field in resource you want for the name of each feature in the list*, 
-    sortField: *field in resource you want to be able to sort by*, 
-    back: *this option is if you want a back button, the button will hide the list and empty it's contents (true, false)*
+    url: /* your REST url */,
+    nameField: /* field in resource you want for the name of each feature in the list */, 
+    sortField: /* field in resource you want to be able to sort be */, 
+    back:  /* this option is if you want a back button, the button will hide the list and empty its contents (true, false) */,
   }  
 ```
 
